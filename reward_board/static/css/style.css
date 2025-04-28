@@ -1,0 +1,169 @@
+/* static/css/style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.date-info {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.board-container {
+    margin-bottom: 20px;
+}
+
+#reward-board {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+#reward-board th, #reward-board td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+#reward-board th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#reward-board td:first-child {
+    min-width: 100px;
+}
+
+.editable {
+    min-height: 20px;
+    outline: none;
+}
+
+.board-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.board-controls button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.board-controls button:hover {
+    background-color: #45a049;
+}
+
+.danger-btn {
+    background-color: #f44336 !important;
+}
+
+.danger-btn:hover {
+    background-color: #d32f2f !important;
+}
+
+.icons-container {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.icon {
+    font-size: 24px;
+    cursor: grab;
+    user-select: none;
+}
+
+.cell-icon {
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.cell-icon::after {
+    content: '✕';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 12px;
+    color: red;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.cell-icon:hover::after {
+    opacity: 1;
+}
+
+/* Dragging styles */
+.dragging {
+    opacity: 0.5;
+}
+
+td.drop-target {
+    background-color: #f0f0f0;
+}
+
+/* Confirmation dialog */
+.confirmation-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dialog-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dialog-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.confirm-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: black;
+}

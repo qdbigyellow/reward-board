@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reward Board</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="date-info">
+                <p>Date: <span id="current-date">{{ date }}</span></p>
+                <p>week: <span id="week-number">{{ week }}</span></p>
+            </div>
+        </header>
+        
+        <div class="board-container">
+            <table id="reward-board">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
+                    </tr>
+                </thead>
+                <tbody id="board-body">
+                    <!-- Rows will be added dynamically -->
+                </tbody>
+            </table>
+            
+            <div class="board-controls">
+                <button id="add-row-btn">Add Row</button>
+                <button id="delete-row-btn">Delete Last Row</button>
+                <button id="regenerate-btn" class="danger-btn">Regenerate Board</button>
+            </div>
+        </div>
+        
+        <div class="icons-container">
+            <div id="smiley-icon" class="icon draggable-icon" draggable="true">😊</div>
+            <div id="heart-icon" class="icon draggable-icon" draggable="true">❤️</div>
+            <div id="sad-icon" class="icon draggable-icon" draggable="true">😢</div>
+        </div>
+    </div>
+
+    <!-- Hidden input to store board state -->
+    <input type="hidden" id="board-state" value='{{ board_state }}'>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

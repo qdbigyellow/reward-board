@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reward-board"
+version = "0.1.0"
+description = "A web-based reward board application"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+dependencies = [
+    "Flask>=2.2.3",
+    "Werkzeug>=2.2.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "flake8>=4.0.0",
+]
+
+[tool.setuptools]
+packages = ["reward_board"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.flake8]
+max-line-length = 100
+exclude = [".git", "__pycache__", "*.egg-info"]
